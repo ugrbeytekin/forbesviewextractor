@@ -27,7 +27,7 @@ jobs:
         env:
           SERVICE_ACCOUNT_FILE: ${{ secrets.SERVICE_ACCOUNT_FILE }}
         run: |
-          python your_script_name.py
+          python fetch_gspread_data.py
 
       - name: Commit and push JSON file
         run: |
