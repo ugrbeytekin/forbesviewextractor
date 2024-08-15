@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3  # Update to v3
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4  # Update to v4
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
@@ -25,7 +25,7 @@ jobs:
 
       - name: Run the Python script
         env:
-          SERVICE_ACCOUNT_FILE: ${{ secrets.SERVICE_ACCOUNT_FILE }}
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         run: |
           python fetch_gspread_data.py
 
